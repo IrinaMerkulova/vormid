@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Küsimustik</title>
+    <link rel="stylesheet" type="text/css" href="kysStyle.css">
+    <script src="kysScript.js"></script>
+</head>
+<body>
+<h1>Ilmateenuste küsimustik</h1>
+<form name="kysiVorm">
+    <label for="nimi">Sisesta oma nimi:</label>
+    <input type="text" name="nimi" id="nimi" placeholder="Eesnimi" oninput="loe()">
+    <!--radionupp - üks vastus on õige-->
+    <fieldset>
+        <legend>Vali sugu:</legend>
+        <br>
+        <input type="radio" name="sugu" id="mees" value="mees" onchange="loe()">
+        <label for="mees">mees</label>
+        <br>
+        <input type="radio" name="sugu" id="naine" value="naine" onchange="loe()">
+        <label for="naine">naine</label>
+        <br>
+        <input type="radio" name="sugu" id="valimata" value="valimata" onchange="loe()">
+        <label for="valimata">valimata</label>
+        <img src="img/tyhi.png" alt="pilt" id="pilt">
+    </fieldset>
+    <!--checkbox - mitu vastust-->
+    <strong>Jälgin ilmateated</strong>
+    <br>
+    <input type="checkbox" name="teate" id="ilm1" value="1 kord päevas" onclick="checkboxValik()">
+    <label for="ilm1">1 kord päevas</label>
+    <br>
+    <input type="checkbox" name="teate" id="ilm2" value="1 kord nädalas" onchange="checkboxValik()">
+    <label for="ilm2">1 kord nädalas</label>
+    <br>
+    <input type="checkbox" name="teate" id="ilm3" value="ei huvita" onchange="checkboxValik()">
+    <label for="ilm3">ei huvita</label>
+    <br>
+    <input type="checkbox" name="teate" id="ilm4" value="kui tuleb torm" onchange="checkboxValik()">
+    <label for="ilm4">kui tuleb torm</label>
+    <br>
+    <strong>
+    <label for="veeb">Milline veebileht sa kasutad ilmateavet vaadata?</label>
+    </strong>
+    <br>
+    <select id="veeb" onchange="selectValik()">
+        <option>...vali...</option>
+        <option value="ilm.ee">www.ilm.ee</option>
+        <option value="www.yr.no">www.yr.no</option>
+        <option value="www.gismeteo.com">www.gismeteo.com</option>
+    </select>
+    <br>
+    <input type="button" value="Loe andmed" onclick="loe()">
+    <input type="reset" value="Puhasta" onclick="kustuta()">
+    <div id="vastus"></div>
+</form>
+</body>
+</html>
+<!--
+Kodutöö:
+1. При помощи форм создать анкету или опросник по произвольной теме.
+2. В анкете должно быть 5 вопросов разного типа (text /radio/ checkbox/ select и cвой выбор -https://www.w3schools.com/html/html_form_input_types.asp)
+3. При помощи JS создать мин 6 функции. Пять из них считывают данные и отображают ответ рядом с вопросом.
+Шестая - запускается по клику на кнопку и выводит сразу всю инфо пяти функций.
+4. Также есть кнопка очищения формы.
+код написанный на уроке -->
