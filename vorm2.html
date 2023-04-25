@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>JS katsed</title>
+    <script src="script.js"></script>
+</head>
+<body onload="randompic()">
+<h1>Harjutus 1. Värskenda leht</h1>
+<img src="" id="random-img" alt="pilt">
+<br>
+<label for="valik5">Mis on pildil?</label>
+<select id="valik5" onchange="imgChoice()">
+    <option>...vali...</option>
+    <option value="img/mees.png">mees</option>
+    <option value="img/naine.png">naine</option>
+    <option value="img/tyhi.png">teadmata</option>
+</select>
+<br>
+<div id="vastus2"></div>
+
+<h1>Harjutus 2. Sisesta kogus ja vali valuuta!</h1>
+<form name="var1" id="var1">
+<table border="1" width="50%">
+    <caption>Valuuta kalkulaator</caption>
+    <!--1.rida-->
+    <tr>
+        <td>
+            <input type="radio" name="valuuta" id="frank"  value="frank" onchange="radioChange(event)">
+            <label for="frank">frank</label>
+            <br>
+            <input type="radio" name="valuuta" id="dollar" value="dollar" onchange="radioChange(event)">
+            <label for="dollar">dollar</label>
+            <br>
+            <input type="radio" name="valuuta" id="sek" Value="sek" onchange="radioChange(event)">
+            <label for="sek">sek</label>
+            <br>
+            <input type="radio" name="valuuta" id="rub" value="rub" onchange="radioChange(event)">
+            <label for="rub">rub</label>
+        </td>
+        <td>
+            <label for="valik">Vali valuuta:</label>
+            <select id="valik" onchange="selectOptionChange(event)">
+                <option>...vali...</option>
+                <option value="dollar">Dollar</option>
+                <option value="rub">Rub</option>
+                <option value="kroon">SEK</option>
+                <option value="frank">Frank</option>
+            </select>
+
+        </td>
+        <td>
+            <input type="text">
+            <input type="checkbox">
+            hindele 4 - lisa ühe valiku
+            hindele 5 - lisa kaks valiku
+
+        </td>
+    </tr>
+    <!--2.rida-->
+    <tr>
+        <td colspan="3">
+            <label for="kogus">Kogus:</label>
+            <input type="number" id="kogus" name="kogus">
+            <div id="vastus"></div>
+            <input type="button" value="Ok" onclick="validateForm()">
+        </td>
+    </tr>
+</table>
+</form>
+
+
+
+</body>
+<!--https://pastebin.com/dFZEagLE-->
+</html>
